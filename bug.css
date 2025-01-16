@@ -1,0 +1,23 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+#myElement {
+  color: blue;
+}
+
+.myElement {
+  color: red;
+}
+
+#myElement.myElement {
+  color: green;
+}
+```
+
+This code snippet defines three rules for the element with the id "myElement" and class "myElement". The order of specificity is:
+
+1. `#myElement` (ID selector, high specificity)
+2. `.myElement` (Class selector, medium specificity)
+3. `#myElement.myElement` (ID and Class selector combination, highest specificity)
+
+Therefore, the final color will be green, as the combined selector has the highest specificity. However, this can be easily missed and lead to unexpected behavior when working with CSS, especially when dealing with complex selectors and inherited styles.
